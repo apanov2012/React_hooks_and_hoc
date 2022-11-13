@@ -2,12 +2,12 @@ import React from "react";
 import CardWrapper from "../../common/Card";
 
 const withFunctions = (Component) => () => {
-    const isAuth = localStorage.getItem("token");
+    const isAuth = Boolean(localStorage.getItem("token"));
     const onLogin = () => {
-        localStorage.setItem("token", "123");
+        localStorage.setItem("token", "true");
     };
     const onLogOut = () => {
-        localStorage.setItem("token", "");
+        localStorage.removeItem("token");
     };
     return (
         <CardWrapper>
