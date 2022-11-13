@@ -5,9 +5,9 @@ const SimpleComponent = ({ onLogin, onLogOut, isAuth }) => {
     return (
         <>
             {isAuth ? (
-                <button onClick={() => onLogOut()}>Войти</button>
+                <button onClick={() => onLogOut()}>Выйти из системы</button>
             ) : (
-                <button onClick={() => onLogin()}>Выйти из системы</button>
+                <button onClick={() => onLogin()}>Войти</button>
             )}
         </>
     );
@@ -15,7 +15,7 @@ const SimpleComponent = ({ onLogin, onLogOut, isAuth }) => {
 SimpleComponent.propTypes = {
     onLogin: PropTypes.func,
     onLogOut: PropTypes.func,
-    isAuth: PropTypes.string
+    isAuth: PropTypes.bool
 };
 
 export default SimpleComponent;
